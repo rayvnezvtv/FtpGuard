@@ -1,0 +1,36 @@
+[2025-06-25 20:15:38] ERROR | FTP connection failed: 530 Login incorrect.
+[2025-06-25 20:45:54] ERROR | FTP connection failed: 530 Login incorrect.
+[2025-06-25 20:47:41] ERROR | create_file failed: [Errno 13] Permission denied: 'C:\\Marseille'
+[2025-06-25 20:48:33] DELETE | C:\Paris | OK
+[2025-06-25 20:49:16] ERROR | create_file failed: [Errno 2] No such file or directory: 'C:\\FTP\\ftp\\marseille'
+[2025-06-25 20:49:37] CREATE_FOLDER | C:\FTP\f | OK
+[2025-06-25 20:49:55] DELETE | C:\FTP\f | OK
+[2025-06-25 21:03:36] CREATE_FOLDER | C:\FTP\Marseille | OK
+[2025-06-25 21:03:51] ERROR | FTP connection failed: 530 Login or password incorrect!
+[2025-06-25 21:11:42] FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-25 21:25:10] FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-25 21:31:52] FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-25 21:32:56] DELETE | C:\FTP\Paris | OK
+[2025-06-25 21:33:03] DELETE | C:\FTP\Marseille | OK
+[2025-06-25 21:33:18] CREATE_FOLDER | C:\FTP\Paris | OK
+[2025-06-25 21:33:20] FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-25 21:33:53] CREATE_FILE | C:\FTP\Paris\Client1 | OK
+[2025-06-25 21:34:18] ERROR | create_file failed: [Errno 2] No such file or directory: 'C:\\FTP\\Paris\\Client1\\audit1'
+[2025-06-25 21:34:37] ERROR | create_file failed: [Errno 2] No such file or directory: 'C:\\FTP\\Paris\\Client1\\audit1'
+[2025-06-25 21:34:47] CREATE_FILE | C:\FTP\Paris | ALREADY EXISTS
+[2025-06-25 21:35:06] FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-25 21:41:07] DELETE | C:\FTP\Paris\Client1 | OK
+[2025-06-25 21:41:17] CREATE_FOLDER | C:\FTP\Paris\Client1 | OK
+[2025-06-25 21:41:31] CREATE_FILE | C:\FTP\Paris\Client1\audit1 | OK
+[2025-06-25 21:41:35] FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-25 21:48:34] RENAME | C:\FTP\Paris\Client1\audit1 -> C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-25 21:48:42] FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-25 21:48:42] FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-25 21:51:27] CREATE_FOLDER | C:\FTP\Marseille | OK
+[2025-06-25 21:51:32] FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-25 21:51:32] FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-25 22:32:45] FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-25 22:32:45] FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-25 22:33:00] DELETE | C:\FTP\Marseille | OK
+[2025-06-25 22:33:04] FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-25 22:33:04] FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK

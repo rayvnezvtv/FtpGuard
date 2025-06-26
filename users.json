@@ -1,0 +1,21 @@
+[
+  {
+    "username": "admin",
+    "password": "azerty",
+    "role": "admin"
+  },
+  {
+    "username": "client1",
+    "password": "1234",
+    "role": "user",
+    "region": "Paris",
+    "client": "Client1"
+  },
+  {
+    "username": "client2",
+    "password": "abcd",
+    "role": "user",
+    "region": "Marseille",
+    "client": "Client2"
+  }
+]
