@@ -1,24 +1,32 @@
 # main.py
+
 from pathlib import Path
 from config import BASE_DIR
 from file_manager import print_tree, create_folder, create_file, delete_path, rename_path
-from ftp_backup import upload_audit_folder, upload_user_audit
+from ftp_backup import upload_audit_folder, upload_user_audit, upload_admin_audit
 from auth import authenticate
+from security import show_result
 import sys
 
-# Authentification
+# === Authentification utilisateur ===
 user = None
 while not user:
     user = authenticate()
 
 role = user["role"]
 
-# Restriction du chemin pour les clients
-if role == "user":
+# === Détermination du périmètre d’accès selon le rôle ===
+if role == "superadmin":
+    user_path = BASE_DIR
+elif role == "admin":
+    user_path = BASE_DIR / user["region"]
+elif role == "user":
     user_path = BASE_DIR / user["region"] / user["client"]
 else:
-    user_path = BASE_DIR
+    print("❌ Rôle inconnu.")
+    sys.exit()
 
+# === Menu dynamique selon le rôle ===
 def show_menu():
     print("\n=== MENU ===")
     print("1. Afficher l’arborescence")
@@ -27,6 +35,9 @@ def show_menu():
     print("4. Supprimer un fichier ou dossier")
     print("5. Renommer un fichier ou dossier")
     print("6. Sauvegarder les fichiers d’audit vers le FTP")
+    if role == "superadmin":
+     print("7. Voir le journal d’activité")
+
     print("0. Quitter")
 
 while True:
@@ -38,30 +49,39 @@ while True:
 
     elif choice == "2":
         name = input("Nom du dossier à créer : ")
-        create_folder(user_path / name)
+        path = user_path / name
+        create_folder(path, user, user_path)
 
     elif choice == "3":
         name = input("Nom du fichier à créer : ")
-        create_file(user_path / name)
+        path = user_path / name
+        create_file(path, user, user_path)
 
     elif choice == "4":
-        name = input("Nom du fichier ou dossier à supprimer : ")
-        delete_path(user_path / name)
+        name = input("Nom du fichier/dossier à supprimer : ")
+        path = user_path / name
+        delete_path(path, user, user_path)
 
     elif choice == "5":
-        old = input("Nom du fichier ou dossier à renommer : ")
+        old = input("Nom actuel : ")
         new = input("Nouveau nom : ")
-        rename_path(user_path / old, new)
+        path = user_path / old
+        rename_path(path, new, user, user_path)
 
     elif choice == "6":
-        if role == "admin":
+        if role == "superadmin":
             upload_audit_folder(BASE_DIR)
-        else:
+        elif role == "admin":
+            upload_admin_audit(user)
+        elif role == "user":
             upload_user_audit(user)
+    elif choice == "7" and role == "superadmin":
+        from tools import read_logs
+        read_logs(user)
 
     elif choice == "0":
-        print("À bientôt !")
-        sys.exit()
+        print("👋 À bientôt.")
+        break
 
     else:
-        print("Choix invalide.")
+        show_result(False, "Choix invalide.")

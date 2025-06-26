@@ -1,0 +1,4 @@
+[2025-06-26 15:06:14] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-26 15:06:14] SYSTEM | FTP_UPLOAD | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-26 15:06:14] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-26 15:06:46] superadmin (superadmin) | CREATE_FOLDER | C:\FTP\Grenoble | OK

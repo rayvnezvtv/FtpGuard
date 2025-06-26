@@ -1,4 +1,5 @@
 # ftp_backup.py
+
 from ftplib import FTP, error_perm
 from config import FTP_HOST, FTP_PORT, FTP_USER, FTP_PASS, BASE_DIR
 from logger import log_action, log_error
@@ -31,11 +32,12 @@ def upload_file(ftp: FTP, local_file: Path, region: str, client: str):
         ftp.cwd("/")
         ensure_ftp_path(ftp, region, client)
         with open(local_file, "rb") as f:
-            ftp.storbinary(f"STOR " + local_file.name, f)
+            ftp.storbinary(f"STOR {local_file.name}", f)
         log_action("FTP_UPLOAD", str(local_file))
     except Exception as e:
         log_error(f"upload_file failed: {e}")
 
+# === SUPERADMIN : tout l'arbre FTP ===
 def upload_audit_folder(base_path: Path):
     ftp = connect_ftp()
     if not ftp:
@@ -53,20 +55,37 @@ def upload_audit_folder(base_path: Path):
     finally:
         ftp.quit()
 
-def upload_user_audit(user: dict):
+# === ADMIN : sa propre ville ===
+def upload_admin_audit(user):
     ftp = connect_ftp()
     if not ftp:
         return
-
-    region = user["region"]
-    client = user["client"]
-    local_path = BASE_DIR / region / client
-
     try:
-        for file in local_path.iterdir():
+        region = user["region"]
+        region_path = BASE_DIR / region
+        for client_folder in region_path.iterdir():
+            if client_folder.is_dir():
+                for file in client_folder.iterdir():
+                    if file.is_file() and file.name.startswith("audit."):
+                        upload_file(ftp, file, region, client_folder.name)
+    except Exception as e:
+        log_error(f"upload_admin_audit failed: {e}", user)
+    finally:
+        ftp.quit()
+
+# === USER : son propre dossier ===
+def upload_user_audit(user):
+    ftp = connect_ftp()
+    if not ftp:
+        return
+    try:
+        region = user["region"]
+        client = user["client"]
+        path = BASE_DIR / region / client
+        for file in path.iterdir():
             if file.is_file() and file.name.startswith("audit."):
                 upload_file(ftp, file, region, client)
     except Exception as e:
-        log_error(f"upload_user_audit failed: {e}")
+        log_error(f"upload_user_audit failed: {e}", user)
     finally:
         ftp.quit()
