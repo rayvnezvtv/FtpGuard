@@ -69,3 +69,34 @@ FTP_CONNECT | 127.0.0.1 | OK
 [2025-06-26 10:39:46] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\archives\2025-06-26\audit.1 | OK
 [2025-06-26 10:39:46] SYSTEM | DAILY_ARCHIVE_PUSH | Archivage + FTP 2025-06-26 terminé | OK
 [2025-06-26 18:57:56] admin1 (admin) | ERROR | Accès interdit hors de votre périmètre.
+[2025-06-26 20:26:25] superadmin (superadmin) | CREATE_FILE | C:\FTP\Grenoble\audit.1 | OK
+[2025-06-26 20:27:35] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-26 20:27:35] SYSTEM | FTP_UPLOAD | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-26 20:27:35] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-26 20:28:55] superadmin (superadmin) | DELETE | C:\FTP\Grenoble\audit.1 | OK
+[2025-06-26 20:29:12] superadmin (superadmin) | CREATE_FOLDER | C:\FTP\Grenoble\Client1 | OK
+[2025-06-26 20:29:23] superadmin (superadmin) | CREATE_FILE | C:\FTP\Grenoble\Client1\audit.1 | OK
+[2025-06-26 20:29:34] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-26 20:29:34] SYSTEM | FTP_UPLOAD | C:\FTP\Grenoble\Client1\audit.1 | OK
+[2025-06-26 20:29:34] SYSTEM | FTP_UPLOAD | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-26 20:29:34] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-26 20:29:49] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-26 20:29:49] SYSTEM | FTP_UPLOAD | C:\FTP\Grenoble\Client1\audit.1 | OK
+[2025-06-26 20:29:49] SYSTEM | FTP_UPLOAD | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-26 20:29:49] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-26 20:30:49] superadmin (superadmin) | CREATE_FOLDER | C:\FTP\0 | OK
+[2025-06-26 20:31:30] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-26 20:31:30] SYSTEM | FTP_UPLOAD | C:\FTP\Grenoble\Client1\audit.1 | OK
+[2025-06-26 20:31:30] SYSTEM | FTP_UPLOAD | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-26 20:31:30] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-26 20:31:30] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.2 | OK
+[2025-06-26 20:32:22] superadmin (superadmin) | DELETE | C:\FTP\Paris\Client1\audit.2 | OK
+[2025-06-26 20:32:38] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-26 20:32:38] SYSTEM | FTP_UPLOAD | C:\FTP\Grenoble\Client1\audit.1 | OK
+[2025-06-26 20:32:38] SYSTEM | FTP_UPLOAD | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-26 20:32:38] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-26 20:34:14] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-26 20:34:14] SYSTEM | FTP_UPLOAD | C:\FTP\Grenoble\Client1\audit.1 | OK
+[2025-06-26 20:34:14] SYSTEM | FTP_UPLOAD | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-26 20:34:14] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-26 20:36:15] admin1 (admin) | ERROR | Accès interdit hors de votre périmètre.
