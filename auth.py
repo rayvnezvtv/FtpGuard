@@ -1,7 +1,7 @@
 # auth.py
 import json
 from getpass import getpass
-from pathlib import Path
+from pathlib import Path0
 
 USERS_FILE = Path("users.json")
 
