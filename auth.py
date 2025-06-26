@@ -3,7 +3,7 @@ import json
 from getpass import getpass
 from pathlib import Path
 
-USERS_FILE = Path("../users.json")
+USERS_FILE = Path("users.json")
 
 def load_users():
     if not USERS_FILE.exists():

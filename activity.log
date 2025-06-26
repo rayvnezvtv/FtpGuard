@@ -68,3 +68,4 @@ FTP_CONNECT | 127.0.0.1 | OK
 [2025-06-26 10:39:46] SYSTEM | ARCHIVE_FILE | C:\FTP\Paris\Client1\audit.1 -> C:\FTP\Paris\Client1\archives\2025-06-26 | OK
 [2025-06-26 10:39:46] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\archives\2025-06-26\audit.1 | OK
 [2025-06-26 10:39:46] SYSTEM | DAILY_ARCHIVE_PUSH | Archivage + FTP 2025-06-26 terminé | OK
+[2025-06-26 18:57:56] admin1 (admin) | ERROR | Accès interdit hors de votre périmètre.
