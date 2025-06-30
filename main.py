@@ -83,7 +83,7 @@ while True:
         if role == "superadmin":
             upload_audit_folder(BASE_DIR)
         elif role == "admin":
-            upload_admin_audit(user)
+            upload_audit_folder(BASE_DIR)
         elif role == "user":
             upload_user_audit(user)
 
