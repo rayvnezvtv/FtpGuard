@@ -100,3 +100,186 @@ FTP_CONNECT | 127.0.0.1 | OK
 [2025-06-26 20:34:14] SYSTEM | FTP_UPLOAD | C:\FTP\Marseille\Client1\audit.1 | OK
 [2025-06-26 20:34:14] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
 [2025-06-26 20:36:15] admin1 (admin) | ERROR | Accès interdit hors de votre périmètre.
+[2025-06-29 19:53:52] admin1 (admin) | CREATE_FOLDER | C:\FTP\Paris\Client2 | OK
+[2025-06-29 19:54:27] admin1 (admin) | ERROR | create_file failed: [Errno 2] No such file or directory: 'C:\\FTP\\Paris\\Client\\audit.1'
+[2025-06-29 19:54:41] admin1 (admin) | CREATE_FILE | C:\FTP\Paris\Client2\audit | OK
+[2025-06-29 19:54:59] admin1 (admin) | ERROR | rename_path failed: [WinError 2] Le fichier spécifié est introuvable: 'C:\\FTP\\Paris\\aduit' -> 'C:\\FTP\\Paris\\audit.1'
+[2025-06-29 19:55:39] admin1 (admin) | RENAME | C:\FTP\Paris\Client2\audit -> C:\FTP\Paris\Client2\audit.1 | OK
+[2025-06-29 19:55:54] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 19:55:54] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 19:55:54] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client2\audit.1 | OK
+[2025-06-29 20:01:39] admin1 (admin) | DELETE | C:\FTP\Paris\Client2\audit.1 | OK
+[2025-06-29 20:01:46] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 20:01:46] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 20:01:58] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 20:01:58] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 20:26:14] superadmin (superadmin) | CREATE_FILE | C:\FTP\Grenoble\Client1\audit.1 | OK
+[2025-06-29 20:26:22] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 20:26:22] SYSTEM | FTP_UPLOAD | C:\FTP\Grenoble\Client1\audit.1 | OK
+[2025-06-29 20:26:22] SYSTEM | FTP_UPLOAD | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-29 20:26:22] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 20:26:51] superadmin (superadmin) | DELETE | C:\FTP\Grenoble\Client1\audit.1 | OK
+[2025-06-29 20:26:58] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 20:26:58] SYSTEM | FTP_UPLOAD | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-29 20:26:58] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 20:35:09] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 20:35:09] SYSTEM | FTP_CWD | /Grenoble/Client1 | OK
+[2025-06-29 20:35:09] SYSTEM | FTP_DELETE | Grenoble/Client1/audit.1 | OK
+[2025-06-29 20:35:09] SYSTEM | FTP_CWD | /Marseille/Client1 | OK
+[2025-06-29 20:35:09] SYSTEM | FTP_SYNC_UPLOAD | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-29 20:35:09] SYSTEM | FTP_CWD | /Paris/Client1 | OK
+[2025-06-29 20:35:09] SYSTEM | FTP_DELETE | Paris/Client1/audit.2 | OK
+[2025-06-29 20:35:09] SYSTEM | FTP_SYNC_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 20:35:42] superadmin (superadmin) | ERROR | create_file failed: [Errno 2] No such file or directory: 'C:\\FTP\\Grenoble\\Client2\\audit.2'
+[2025-06-29 20:35:56] superadmin (superadmin) | CREATE_FILE | C:\FTP\Grenoble\Client1\audit.1 | OK
+[2025-06-29 20:36:12] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 20:36:12] SYSTEM | FTP_CWD | /Grenoble/Client1 | OK
+[2025-06-29 20:36:12] SYSTEM | FTP_SYNC_UPLOAD | C:\FTP\Grenoble\Client1\audit.1 | OK
+[2025-06-29 20:36:12] SYSTEM | FTP_CWD | /Marseille/Client1 | OK
+[2025-06-29 20:36:12] SYSTEM | FTP_SYNC_UPLOAD | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-29 20:36:12] SYSTEM | FTP_CWD | /Paris/Client1 | OK
+[2025-06-29 20:36:12] SYSTEM | FTP_SYNC_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 20:37:14] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 20:37:14] SYSTEM | FTP_CWD | /Grenoble/Client1 | OK
+[2025-06-29 20:37:14] SYSTEM | FTP_SYNC_UPLOAD | C:\FTP\Grenoble\Client1\audit.1 | OK
+[2025-06-29 20:37:14] SYSTEM | FTP_CWD | /Marseille/Client1 | OK
+[2025-06-29 20:37:14] SYSTEM | FTP_SYNC_UPLOAD | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-29 20:37:14] SYSTEM | FTP_CWD | /Paris/Client1 | OK
+[2025-06-29 20:37:14] SYSTEM | FTP_SYNC_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 20:38:31] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 20:38:31] SYSTEM | FTP_CWD | /Paris/Client1 | OK
+[2025-06-29 20:38:31] SYSTEM | FTP_SYNC_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 20:43:53] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 20:43:53] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 20:46:49] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 20:46:49] SYSTEM | FTP_SYNC_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 20:51:37] superadmin (superadmin) | CREATE_FOLDER | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 20:51:56] superadmin (superadmin) | ERROR | rename_path failed: Invalid name ''
+[2025-06-29 20:52:03] superadmin (superadmin) | DELETE | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 20:52:11] superadmin (superadmin) | CREATE_FILE | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 20:52:30] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 20:52:30] SYSTEM | FTP_SYNC_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 20:59:19] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 20:59:19] SYSTEM | FTP_SYNC_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:02:47] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:02:47] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:03:36] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:03:36] SYSTEM | ARCHIVE_FILE | C:\FTP\Paris\Client1\audit.1 -> C:\FTP\Paris\Client1\archives\2025-06-29 | OK
+[2025-06-29 21:03:36] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\archives\2025-06-29\audit.1 | OK
+[2025-06-29 21:03:36] SYSTEM | DAILY_ARCHIVE_PUSH | Archivage + FTP 2025-06-29 terminé | OK
+[2025-06-29 21:07:23] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:07:23] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:07:57] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:07:57] SYSTEM | ARCHIVE_FILE | C:\FTP\Paris\Client1\audit.1 -> C:\FTP\Paris\Client1\archives\2025-06-29 | OK
+[2025-06-29 21:07:57] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\archives\2025-06-29\audit.1 | OK
+[2025-06-29 21:07:57] SYSTEM | DAILY_ARCHIVE_PUSH | Archivage + FTP 2025-06-29 terminé | OK
+[2025-06-29 21:13:50] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:13:50] SYSTEM | ARCHIVE_FILE | C:\FTP\Paris\Client1\audit.1 -> C:\FTP\Paris\Client1\archives\2025-06-29 | OK
+[2025-06-29 21:13:50] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\archives\2025-06-29\audit.1 | OK
+[2025-06-29 21:13:50] SYSTEM | DAILY_ARCHIVE_PUSH | Archivage + FTP 2025-06-29 terminé | OK
+[2025-06-29 21:25:43] superadmin (superadmin) | DELETE | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:25:49] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:25:49] SYSTEM | FTP_DELETE | Paris/Client1/audit.1 | OK
+[2025-06-29 21:26:09] superadmin (superadmin) | CREATE_FILE | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:26:33] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:26:33] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:27:08] superadmin (superadmin) | CREATE_FOLDER | C:\FTP\Grenoble\Client1 | OK
+[2025-06-29 21:27:29] superadmin (superadmin) | CREATE_FILE | C:\FTP\Grenoble\Client1\audit.2 | OK
+[2025-06-29 21:27:40] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:27:40] SYSTEM | FTP_UPLOAD | C:\FTP\Grenoble\Client1\audit.2 | OK
+[2025-06-29 21:27:40] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:28:21] superadmin (superadmin) | DELETE | C:\FTP\Grenoble\Client1\audit.2 | OK
+[2025-06-29 21:28:22] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:28:22] SYSTEM | FTP_DELETE | Grenoble/Client1/audit.2 | OK
+[2025-06-29 21:28:22] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:28:50] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:28:50] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:29:50] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:29:50] SYSTEM | ARCHIVE_FILE | C:\FTP\Paris\Client1\audit.1 -> C:\FTP\Paris\Client1\archives\2025-06-29 | OK
+[2025-06-29 21:29:50] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\archives\2025-06-29\audit.1 | OK
+[2025-06-29 21:29:50] SYSTEM | DAILY_ARCHIVE_PUSH | Archivage + FTP 2025-06-29 terminé | OK
+[2025-06-29 21:32:06] superadmin (superadmin) | CREATE_FOLDER | C:\FTP\Paris\Client1 | OK
+[2025-06-29 21:33:06] superadmin (superadmin) | ERROR | create_file failed: [Errno 2] No such file or directory: 'C:\\FTP\\Paris\\Client\\audit.1'
+[2025-06-29 21:33:28] superadmin (superadmin) | ERROR | create_file failed: [Errno 2] No such file or directory: 'C:\\FTP\\Paris\\Client\\audit.1'
+[2025-06-29 21:33:51] superadmin (superadmin) | CREATE_FILE | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:33:55] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:33:55] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:34:33] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:34:33] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:34:36] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:34:36] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:34:37] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:34:37] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:34:38] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:34:38] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:34:38] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:34:38] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:34:38] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:34:38] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:34:38] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:34:38] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:34:38] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:34:38] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:35:11] superadmin (superadmin) | CREATE_FILE | C:\FTP\Paris\Client1\audit.5 | OK
+[2025-06-29 21:35:13] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:35:13] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:35:13] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.5 | OK
+[2025-06-29 21:36:04] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:36:04] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:36:04] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.5 | OK
+[2025-06-29 21:37:11] superadmin (superadmin) | DELETE | C:\FTP\Paris\Client | OK
+[2025-06-29 21:37:25] superadmin (superadmin) | DELETE | C:\FTP\Paris\Client1 | OK
+[2025-06-29 21:38:11] superadmin (superadmin) | CREATE_FOLDER | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:38:22] superadmin (superadmin) | DELETE | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:38:49] superadmin (superadmin) | CREATE_FOLDER | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-29 21:39:01] superadmin (superadmin) | DELETE | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-29 21:39:09] superadmin (superadmin) | CREATE_FILE | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-29 21:39:21] superadmin (superadmin) | CREATE_FILE | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:39:30] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:39:30] SYSTEM | FTP_UPLOAD | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-29 21:39:30] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:40:06] superadmin (superadmin) | DELETE | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-29 21:40:10] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:40:10] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:40:26] superadmin (superadmin) | CREATE_FILE | C:\FTP\Marseille\Client1\audit.2 | OK
+[2025-06-29 21:40:30] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:40:30] SYSTEM | FTP_UPLOAD | C:\FTP\Marseille\Client1\audit.2 | OK
+[2025-06-29 21:40:30] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:40:53] superadmin (superadmin) | CREATE_FILE | C:\FTP\Marseille\Client1\audit.3 | OK
+[2025-06-29 21:40:56] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:40:56] SYSTEM | FTP_UPLOAD | C:\FTP\Marseille\Client1\audit.2 | OK
+[2025-06-29 21:40:56] SYSTEM | FTP_UPLOAD | C:\FTP\Marseille\Client1\audit.3 | OK
+[2025-06-29 21:40:56] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:53:05] superadmin (superadmin) | CREATE_FOLDER | C:\FTP\Paris\Client1 | OK
+[2025-06-29 21:53:23] superadmin (superadmin) | CREATE_FILE | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:53:39] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:53:39] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:54:17] superadmin (superadmin) | CREATE_FOLDER | C:\FTP\Marseille\Client1 | OK
+[2025-06-29 21:54:25] superadmin (superadmin) | CREATE_FILE | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-29 21:54:32] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:54:32] SYSTEM | FTP_UPLOAD | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-29 21:54:32] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:54:56] superadmin (superadmin) | DELETE | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-29 21:54:58] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:54:58] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:55:27] superadmin (superadmin) | DELETE | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:55:29] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:57:03] superadmin (superadmin) | CREATE_FILE | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:57:08] superadmin (superadmin) | CREATE_FILE | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-29 21:57:55] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:57:55] SYSTEM | FTP_UPLOAD | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-29 21:57:55] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 21:58:42] superadmin (superadmin) | DELETE | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-29 21:58:48] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 21:58:48] SYSTEM | FTP_DELETE | Marseille/Client1/audit.1 | OK
+[2025-06-29 21:58:48] SYSTEM | FTP_UPLOAD | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 22:00:15] superadmin (superadmin) | DELETE | C:\FTP\Paris\Client1\audit.1 | OK
+[2025-06-29 22:00:17] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 22:00:17] SYSTEM | FTP_DELETE | Paris/Client1/audit.1 | OK
+[2025-06-29 22:01:28] superadmin (superadmin) | CREATE_FILE | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-29 22:01:29] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 22:01:29] SYSTEM | FTP_UPLOAD | C:\FTP\Marseille\Client1\audit.1 | OK
+[2025-06-29 22:02:36] SYSTEM | FTP_CONNECT | 127.0.0.1 | OK
+[2025-06-29 22:02:36] SYSTEM | ARCHIVE_FILE | C:\FTP\Marseille\Client1\audit.1 -> C:\FTP\Marseille\Client1\archives\2025-06-29 | OK
+[2025-06-29 22:02:36] SYSTEM | FTP_UPLOAD | C:\FTP\Marseille\Client1\archives\2025-06-29\audit.1 | OK
+[2025-06-29 22:02:36] SYSTEM | DAILY_ARCHIVE_PUSH | Archivage + FTP 2025-06-29 terminé | OK

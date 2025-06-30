@@ -1,10 +1,18 @@
 # main.py
 
+from networkscanner import scan_network
 from pathlib import Path
 from config import BASE_DIR
-from file_manager import print_tree, create_folder, create_file, delete_path, rename_path
-from ftp_backup import upload_audit_folder, upload_user_audit, upload_admin_audit
-from auth import authenticate
+from file_manager import (
+    print_tree, create_folder, create_file,
+    delete_path, rename_path
+)
+from ftp_backup import (
+    upload_audit_folder,
+    upload_user_audit,
+    upload_admin_audit
+)
+from auth import authenticate, create_user
 from security import show_result
 import sys
 
@@ -35,11 +43,14 @@ def show_menu():
     print("4. Supprimer un fichier ou dossier")
     print("5. Renommer un fichier ou dossier")
     print("6. Sauvegarder les fichiers d’audit vers le FTP")
+    if role in ["superadmin", "admin"]:
+        print("7. Créer un utilisateur")
     if role == "superadmin":
-     print("7. Voir le journal d’activité")
-
+        print("8. Voir le journal d’activité")
+        print("9.Activer le scan réseau")
     print("0. Quitter")
 
+# === Boucle principale ===
 while True:
     show_menu()
     choice = input("Votre choix : ")
@@ -75,9 +86,18 @@ while True:
             upload_admin_audit(user)
         elif role == "user":
             upload_user_audit(user)
-    elif choice == "7" and role == "superadmin":
+
+    elif choice == "7" and role in ["superadmin", "admin"]:
+        create_user(user)
+
+    elif choice == "8" and role == "superadmin":
         from tools import read_logs
         read_logs(user)
+    
+    elif choice == "9" and role == "superadmin":
+        from networkscanner import scan_network
+        scan_network(portscan=True)
+
 
     elif choice == "0":
         print("👋 À bientôt.")

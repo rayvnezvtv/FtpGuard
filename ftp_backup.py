@@ -1,5 +1,3 @@
-# ftp_backup.py
-
 from ftplib import FTP, error_perm
 from config import FTP_HOST, FTP_PORT, FTP_USER, FTP_PASS, BASE_DIR
 from logger import log_action, log_error
@@ -18,6 +16,7 @@ def connect_ftp():
 
 def ensure_ftp_path(ftp: FTP, region: str, client: str):
     try:
+        ftp.cwd("/")
         for folder in [region, client]:
             try:
                 ftp.cwd(folder)
@@ -32,30 +31,63 @@ def upload_file(ftp: FTP, local_file: Path, region: str, client: str):
         ftp.cwd("/")
         ensure_ftp_path(ftp, region, client)
         with open(local_file, "rb") as f:
-            ftp.storbinary(f"STOR {local_file.name}", f)
+            ftp.storbinary(f"STOR " + local_file.name, f)
         log_action("FTP_UPLOAD", str(local_file))
     except Exception as e:
         log_error(f"upload_file failed: {e}")
 
-# === SUPERADMIN : tout l'arbre FTP ===
+# === SUPERADMIN : Synchronisation complète ===
 def upload_audit_folder(base_path: Path):
     ftp = connect_ftp()
     if not ftp:
         return
+
     try:
+        ftp.cwd("/")  # Toujours commencer depuis la racine
         for region_folder in base_path.iterdir():
             if region_folder.is_dir():
                 for client_folder in region_folder.iterdir():
                     if client_folder.is_dir():
-                        for file in client_folder.iterdir():
-                            if file.is_file() and file.name.startswith("audit."):
-                                upload_file(ftp, file, region_folder.name, client_folder.name)
+                        local_files = [
+                            f for f in client_folder.iterdir()
+                            if f.is_file() and f.name.startswith("audit.")
+                        ]
+                        local_filenames = [f.name for f in local_files]
+
+                        # Se placer dans le bon dossier FTP
+                        ftp.cwd("/")
+                        ensure_ftp_path(ftp, region_folder.name, client_folder.name)
+
+                        # Obtenir fichiers distants
+                        try:
+                            remote_files = ftp.nlst()
+                        except Exception:
+                            remote_files = []
+
+                        # Supprimer les fichiers obsolètes sur FTP
+                        for remote_file in remote_files:
+                            if remote_file.startswith("audit.") and remote_file not in local_filenames:
+                                try:
+                                    ftp.delete(remote_file)
+                                    log_action("FTP_DELETE", f"{region_folder.name}/{client_folder.name}/{remote_file}")
+                                except Exception as e:
+                                    log_error(f"Failed to delete {remote_file} on FTP: {e}")
+
+                        # Uploader les fichiers présents localement
+                        for local_file in local_files:
+                            try:
+                                with open(local_file, "rb") as f:
+                                    ftp.storbinary(f"STOR " + local_file.name, f)
+                                log_action("FTP_UPLOAD", str(local_file))
+                            except Exception as e:
+                                log_error(f"Failed to upload {local_file}: {e}")
+
     except Exception as e:
         log_error(f"upload_audit_folder failed: {e}")
     finally:
         ftp.quit()
 
-# === ADMIN : sa propre ville ===
+# === ADMIN : Upload de sa propre région (sans suppression distante) ===
 def upload_admin_audit(user):
     ftp = connect_ftp()
     if not ftp:
@@ -73,7 +105,7 @@ def upload_admin_audit(user):
     finally:
         ftp.quit()
 
-# === USER : son propre dossier ===
+# === USER : Upload dans son propre dossier (sans suppression distante) ===
 def upload_user_audit(user):
     ftp = connect_ftp()
     if not ftp:
